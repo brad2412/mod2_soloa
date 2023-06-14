@@ -1,0 +1,28 @@
+<%= render partial: "shared/nav" %>
+
+<h1>New Coupon</h1>
+
+<%= form_with model: [@merchant, @coupon], url: merchant_coupons_path(@merchant), class: 'merchant_coupon_form' do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :code %>
+    <%= form.text_field :code, id: "coupon_code" %>
+  </div>
+
+  <div>
+    <%= form.label :value %>
+    <%= form.number_field :value %>
+  </div>
+
+  <div>
+  <%= form.label :amount_type %>
+  <%= form.select :amount_type, options_for_select(["Percent", "Dollar"]) %>
+</div>
+
+  <%= form.submit "Submit" %>
+<% end %>
+

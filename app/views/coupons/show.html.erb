@@ -1,3 +1,9 @@
+<%= render partial: "shared/nav" %>
+
 <h1><%= @coupon.name %></h1>
 <p>Merchant: <%= @merchant.name %></p>
 <p>Code: <%= @coupon.code %></p>
+<p>Percent/Dollar Off: <%= @coupon.value %> (<%= @coupon.amount_type.capitalize %> off)</p>
+<p>Status: <%= @coupon.active ? "Active" : "Inactive" %></p>
+<p>Usage Count: <%= @coupon.used_count %></p>
+
